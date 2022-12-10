@@ -86,4 +86,34 @@ public class QuestaoTest {
         }
 
     }
+
+    @Test
+    public void tentarIncluirTemaQueJaExisteRetornaExcecao() {
+        Tema tema = new Tema("Tema", 1);
+        List<Tema> temas = new ArrayList<>();
+        temas.add(tema);
+
+        Questao questao = new Questao();
+        questao.setTemas(temas);
+
+        try {
+            questao.addTema(tema);
+        } catch (RuntimeException e) {
+            assertEquals("Tema já existe nessa questão", e.getMessage());
+        }
+    }
+
+    @Test
+    public void adicionaTemaQueNaoExiste() {
+        Tema tema = new Tema("Tema", 1);
+        Tema tema2 = new Tema("Tema2", 2);
+        List<Tema> temas = new ArrayList<>();
+        temas.add(tema);
+
+        Questao questao = new Questao();
+        questao.setTemas(temas);
+
+        questao.addTema(tema2);
+        assertEquals(2, questao.getTemas().size());
+    }
 }

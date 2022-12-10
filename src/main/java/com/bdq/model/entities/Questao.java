@@ -60,7 +60,16 @@ public class Questao {
 		return temas;
 	}
 
-	public void addTema(Tema tema) {
+	public void setTemas(List<Tema> temas) {
+		this.temas = temas;
+	}
+
+	public void addTema(Tema tema) throws RuntimeException {
+		for (Tema t : temas) {
+			if (t.equals(tema)) {
+				throw new RuntimeException("Tema já existe nessa questão");
+			}
+		}
 		temas.add(tema);
 	}
 
