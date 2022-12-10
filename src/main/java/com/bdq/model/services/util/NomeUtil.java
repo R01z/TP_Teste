@@ -4,7 +4,7 @@ public class NomeUtil {
 
     public static boolean nomeValido(String nome) {
         for (int i = 0; i < nome.length(); i++) {
-            letra = nome.charAt(i);
+            char letra = nome.charAt(i);
             if (Character.isDigit(letra))
                 return false;
         }
