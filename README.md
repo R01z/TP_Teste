@@ -11,6 +11,8 @@ O trabalho foi feito usando o padrão de arquitetura MVC (Model View Controller)
 
 No nosso trabalho usamos banco de dados MySQL. É usado DAO para acesso ao banco de dados. O DAO é um padrão de projeto com o objetivo de encapsular classes e funções responsáveis por acessar o banco de dados. O DAO faz a comunicação com o model, que tem as entidades e os serviços. As entidades são classes usadas para o desenvolvimento, como classe Aluno e classe Professor. Já os serviços fazem a ligação entre o controller e o dao. Por último, o controller faz a ligação entre o model e a interface do usuário, passando para o model informações inseridas na interface, e para a interface informações vindas do model.
 
+Para criar as telas usamos a biblioteca JavaFX, para a realização dos testes de integração e2e nesse framework usamos TestFX: https://github.com/TestFX/TestFX
+
 # Algumas decisões que tomadas no desenvolvimento:
 ●	Temos dois tipos de usuário: Professor e Aluno, ambos herdando de Usuário, essa diferença é importante para definir se o usuário logado pode acessar as questões privadas ou não;<br /><br />
 ●	Tema e Relatorio são classes a parte que se relacionam com questão, isso foi feito pois um tema pode estar relacionado a várias questões, e essas podem ser pesquisadas por temas, com os temas sendo objetos evitamos incompatibilidades;<br /><br />
