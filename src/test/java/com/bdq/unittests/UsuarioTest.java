@@ -20,14 +20,14 @@ public class UsuarioTest {
 
 	@Test
 	public void usuarioCadastradoEAluno() {
-		Usuario aluno = new Aluno("Aluno", 555, 2018046, "47970631061");
+		Usuario aluno = new Aluno("Aluno", 555, "2018046", "47970631061");
 		assertTrue(aluno.getUsrAluno());
 	}
 
 	@Test
 	public void setarNomeDoUsuario() {
 		String nome = "Aluno";
-		Usuario aluno = new Aluno("", 555, 2018046, "47970631061");
+		Usuario aluno = new Aluno("", 555, "2018046", "47970631061");
 		aluno.setNome(nome);
 		assertEquals(nome, aluno.getNome());
 	}

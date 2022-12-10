@@ -29,7 +29,7 @@ public class AlunoDaoJDBC implements AlunoDao {
     Aluno aluno = new Aluno();
     aluno.setIdUsr(rs.getInt(ID_USR));
     aluno.setNomeUsr(rs.getString(NOME_USR));
-    aluno.setMatricula(rs.getLong(MATRICULA));
+    aluno.setMatricula(rs.getString(MATRICULA));
     return aluno;
   }
 
@@ -39,13 +39,13 @@ public class AlunoDaoJDBC implements AlunoDao {
     int rowsAffected = 0;
     try {
       st = conn.prepareStatement(
-              "INSERT INTO Aluno "
-                      + "(nomeUsr, matricula, nome, senha) "
-                      + "VALUES "
-                      + "(?, ?, ?, ?)",
-              Statement.RETURN_GENERATED_KEYS);
+          "INSERT INTO Aluno "
+              + "(nomeUsr, matricula, nome, senha) "
+              + "VALUES "
+              + "(?, ?, ?, ?)",
+          Statement.RETURN_GENERATED_KEYS);
       st.setString(1, obj.getNomeUsr());
-      st.setLong(2, obj.getMatricula());
+      st.setString(2, obj.getMatricula());
       st.setString(3, obj.getNome());
       st.setString(4, obj.getSenha());
       rowsAffected = st.executeUpdate();
@@ -87,7 +87,7 @@ public class AlunoDaoJDBC implements AlunoDao {
     ResultSet rs = null;
     try {
       st = conn.prepareStatement(
-              SELECT_ALUNO + ID_USR + " = ?");
+          SELECT_ALUNO + ID_USR + " = ?");
       st.setInt(1, id);
       rs = st.executeQuery();
       if (rs.next()) {
@@ -107,7 +107,7 @@ public class AlunoDaoJDBC implements AlunoDao {
     PreparedStatement st = null;
     ResultSet rs = null;
     try {
-      st = conn.prepareStatement(SELECT_ALUNO + NOME_USR + " = ? AND "+SENHA+" = ?");
+      st = conn.prepareStatement(SELECT_ALUNO + NOME_USR + " = ? AND " + SENHA + " = ?");
       st.setString(1, nomeUsr);
       st.setString(2, senha);
       rs = st.executeQuery();
@@ -124,13 +124,13 @@ public class AlunoDaoJDBC implements AlunoDao {
   }
 
   @Override
-  public Aluno findByMatricula(long matricula) {
+  public Aluno findByMatricula(String matricula) {
     PreparedStatement st = null;
     ResultSet rs = null;
     try {
       st = conn.prepareStatement(
-              SELECT_ALUNO + MATRICULA + " = ?");
-      st.setLong(1, matricula);
+          SELECT_ALUNO + MATRICULA + " = ?");
+      st.setString(1, matricula);
       rs = st.executeQuery();
       if (rs.next()) {
         return alunoFromResultSet(rs);
@@ -150,9 +150,9 @@ public class AlunoDaoJDBC implements AlunoDao {
     ResultSet rs = null;
     try {
       st = conn.prepareStatement(
-              "SELECT COUNT(1) "
-                      + "FROM Aluno "
-                      + "WHERE Aluno.nomeUsr = ?");
+          "SELECT COUNT(1) "
+              + "FROM Aluno "
+              + "WHERE Aluno.nomeUsr = ?");
       st.setString(1, nomeUsr);
       rs = st.executeQuery();
       if (rs.next()) {
