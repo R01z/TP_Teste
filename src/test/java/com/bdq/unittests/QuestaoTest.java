@@ -30,24 +30,26 @@ public class QuestaoTest {
         Questao questao = new Questao(1, "enuciado", "resposta", true, temas);
         assertTrue(questao.questaoTemTema(tema));
     }
-    
-     @Test
+
+    @Test
     public void setQuestaoPublica() {
-        Tema tema = new Tema("Tema", 1);
+        Tema tema = new Tema();
+        tema.setNome("Tema");
+        tema.setIdTema(1);
         List<Tema> temas = new ArrayList<>();
         temas.add(tema);
         Questao questao = new Questao(1, "enuciado", "resposta", false, temas);
         questao.setPublica(true);
         assertTrue(questao.questaoPublica());
     }
-    
-      @Test
-     public void setEnunciadoPublica() {
+
+    @Test
+    public void setEnunciadoPublica() {
         Tema tema = new Tema("Tema", 1);
         List<Tema> temas = new ArrayList<>();
         temas.add(tema);
         Questao questao = new Questao(1, "", "resposta", false, temas);
-        
+
         questao.setEnunciado("teste");
         String enunciado = questao.getEnunciado();
         assertTrue(enunciado == "teste");
