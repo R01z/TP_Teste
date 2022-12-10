@@ -21,7 +21,7 @@ Para criar as telas usamos a biblioteca JavaFX, para a realização dos testes d
 ●	Questões podem possuir mais de um tema e compartilhar temas;<br /><br />
 ●	Temas são objetos a parte para se controlar os temas disponíveis dentro do sistema, facilitando consultas e evitando duplicidades
 
-#Cobertura
+# Cobertura
 A cobertura de testes pode ser vista em: https://app.codecov.io/gh/R01z/TP_Teste
 
 
