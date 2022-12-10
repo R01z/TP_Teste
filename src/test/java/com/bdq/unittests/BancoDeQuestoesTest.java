@@ -33,4 +33,12 @@ public class BancoDeQuestoesTest {
 		assertEquals(0.0, resultado, 0.0);
 	}
 
+	@Test
+	public void calculaMediaListaNull() {
+		List<Double> lista = new ArrayList<>();
+		lista = null;
+		Double resultado = BancoDeQuestoes.calculaMedia(lista);
+		assertEquals(0.0, resultado, 0.0);
+	}
+
 }
