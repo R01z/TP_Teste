@@ -19,8 +19,14 @@ public class NomeUtilTest {
     }
 
     @Test
-    public void nomeInseridoNaoEValido() {
+    public void nomeInseridoContemDigito() {
         boolean resultado = NomeUtil.nomeValido("Ig0r");
+        assertFalse(resultado);
+    }
+
+    @Test
+    public void nomeTemMenosDe3Digitos() {
+        boolean resultado = NomeUtil.nomeValido("Ig");
         assertFalse(resultado);
     }
 }
