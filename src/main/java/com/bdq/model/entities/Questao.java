@@ -64,6 +64,17 @@ public class Questao {
 		temas.add(tema);
 	}
 
+	public void removeTema(Tema tema) throws RuntimeException {
+		if (temas.size() <= 1)
+			throw new RuntimeException("Questão precisa ter ao menos um tema");
+		else {
+			for (int i = 0; i < temas.size(); i++) {
+				if (temas.get(i).getNome() == tema.getNome())
+					temas.remove(i);
+			}
+		}
+	}
+
 	public void setRelatorio(Relatorio relatorio) {
 		this.relatorio = relatorio;
 	}
@@ -79,9 +90,9 @@ public class Questao {
 		}
 		return false;
 	}
-	
+
 	public boolean questaoPublica() {
-                if (this.publica){
+		if (this.publica) {
 			return true;
 		}
 		return false;

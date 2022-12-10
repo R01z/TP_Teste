@@ -59,4 +59,31 @@ public class QuestaoTest {
         String enunciado = questao.getEnunciado();
         assertTrue(enunciado == "teste");
     }
+
+    @Test
+    public void removeTema() {
+        Tema tema = new Tema("Tema", 1);
+        Tema tema2 = new Tema("Tema2", 2);
+        List<Tema> temas = new ArrayList<>();
+        temas.add(tema);
+        temas.add(tema2);
+        Questao questao = new Questao(1, "Enunciado", "resposta", false, temas);
+        questao.removeTema(tema2);
+        assertEquals(1, questao.getTemas().size());
+    }
+
+    @Test
+    public void excecaoAoRemoverTemasCasoQuestaoTenha1OuMenosTemas() {
+        Tema tema = new Tema("Tema", 1);
+        List<Tema> temas = new ArrayList<>();
+        temas.add(tema);
+        Questao questao = new Questao(1, "Enunciado", "resposta", false, temas);
+
+        try {
+            questao.removeTema(tema);
+        } catch (RuntimeException e) {
+            assertEquals("Questão precisa ter ao menos um tema", e.getMessage());
+        }
+
+    }
 }
