@@ -2,6 +2,7 @@ package com.bdq.unittests;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,5 +29,14 @@ public class NomeUtilTest {
     public void nomeTemMenosDe3Digitos() {
         boolean resultado = NomeUtil.nomeValido("Ig");
         assertFalse(resultado);
+    }
+
+    @Test
+    public void testaMensagemExcecaoCasoNomeSejaNull() {
+        try {
+            boolean resultado = NomeUtil.nomeValido(null);
+        } catch (NullPointerException e) {
+            assertEquals("Necessário preencher o nome", e.getMessage());
+        }
     }
 }
