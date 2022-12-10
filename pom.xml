@@ -129,8 +129,11 @@
                 <configuration>
                     <excludes>
                         <exclude>com/bdq/controllers/*</exclude>
+                        <exclude>com/bdq/WelcomeApplication.class</exclude>
                         <exclude>com/bdq/application/*</exclude>
                         <exclude>com/bdq/config/db/*</exclude>
+                        <exclude>com/bdq/model/dao/**</exclude>
+                        <exclude>com/bdq/model/exceptions/*</exclude>
                     </excludes>
                 </configuration>
                 <executions>
