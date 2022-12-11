@@ -10,7 +10,7 @@ import org.junit.Before;
 import com.bdq.model.entities.Professor;
 
 
-public class AlunoTest {
+public class ProfessorTest {
 
     Professor professor;
 
