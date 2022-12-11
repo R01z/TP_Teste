@@ -2,16 +2,13 @@
 // Autor: Ruy Braga Filho
 package com.bdq.unittests;
 
-
 import static org.junit.Assert.assertEquals;
 
-import java.beans.Transient;
-
 import org.junit.Test;
+import org.junit.Before;
 
 import com.bdq.model.entities.Aluno;
-import com.bdq.model.entities.Professor;
-import com.bdq.model.entities.Usuario;
+
 
 public class AlunoTest {
 
