@@ -1,5 +1,10 @@
 package com.bdq.model.entities;
 
+import java.lang.NullPointerException;
+
+import com.bdq.model.services.util.CpfUtil;
+import com.bdq.model.services.util.NomeUtil;
+
 public class Usuario {
   private String nomeUsr;
   private Integer idUsr;
@@ -15,7 +20,8 @@ public class Usuario {
     this.cpf = cpf;
   }
 
-  public Usuario() {}
+  public Usuario() {
+  }
 
   public String getNomeUsr() {
     return nomeUsr;
@@ -62,10 +68,19 @@ public class Usuario {
   }
 
   public String getCpf() {
-	return cpf;
+    return cpf;
   }
 
-  public void setCpf(String cpf) {
-	this.cpf = cpf;
+  public void setCpf(String cpf) throws RuntimeException {
+    try {
+      boolean att = CpfUtil.isCPF(cpf);
+      if (att) {
+        this.cpf = cpf;
+      } else
+        throw new RuntimeException("CPF invalido");
+    } catch (NullPointerException e) {
+      throw new RuntimeException("CPF invalido");
+    }
+
   }
 }

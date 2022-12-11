@@ -32,4 +32,31 @@ public class UsuarioTest {
 		assertEquals(nome, aluno.getNome());
 	}
 
+	@Test
+	public void setarCpfComValidadores() {
+		Usuario prof = new Professor();
+		prof.setCpf("47970631061");
+		assertEquals("47970631061", prof.getCpf());
+	}
+
+	@Test
+	public void setarCpfInvalidoRetornaExcecao() {
+		Usuario prof = new Professor();
+		try {
+			prof.setCpf("47970ABC061");
+		} catch (RuntimeException e) {
+			assertEquals("CPF invalido", e.getMessage());
+		}
+	}
+
+	@Test
+	public void setarCpfNullRetornaExcecao() {
+		Usuario prof = new Professor();
+		try {
+			prof.setCpf(null);
+		} catch (RuntimeException e) {
+			assertEquals("CPF invalido", e.getMessage());
+		}
+	}
+
 }
