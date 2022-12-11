@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bdq.unittests.AlunoUtilTest" time="0.001" tests="4" errors="0" skipped="0" failures="0">
+<testsuite name="com.bdq.unittests.NomeUtilTest" time="0" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="11.0.9+7-LTS"/>
@@ -64,8 +64,8 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="matriculaValida" classname="com.bdq.unittests.AlunoUtilTest" time="0.001"/>
-  <testcase name="matriculaComLetrasRetornaFalso" classname="com.bdq.unittests.AlunoUtilTest" time="0"/>
-  <testcase name="matriculaComQuantidadeDeDigitosDiferenteDe10RetornaFalso" classname="com.bdq.unittests.AlunoUtilTest" time="0"/>
-  <testcase name="matriculaNullRetornaExcecao" classname="com.bdq.unittests.AlunoUtilTest" time="0"/>
+  <testcase name="testaMensagemExcecaoCasoNomeSejaNull" classname="com.bdq.unittests.NomeUtilTest" time="0"/>
+  <testcase name="nomeInseridoContemDigito" classname="com.bdq.unittests.NomeUtilTest" time="0"/>
+  <testcase name="nomeTemMenosDe3Digitos" classname="com.bdq.unittests.NomeUtilTest" time="0"/>
+  <testcase name="nomeInseridoEValido" classname="com.bdq.unittests.NomeUtilTest" time="0"/>
 </testsuite>

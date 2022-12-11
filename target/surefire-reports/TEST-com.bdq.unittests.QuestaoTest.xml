@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bdq.unittests.QuestaoTest" time="0.002" tests="2" errors="0" skipped="0" failures="0">
+<testsuite name="com.bdq.unittests.QuestaoTest" time="0" tests="8" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="11.0.9+7-LTS"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-11.0.9\bin"/>
-    <property name="maven.multiModuleProjectDirectory" value="D:\UFMG\EngSoft2\TP\bancodequestoes"/>
+    <property name="maven.multiModuleProjectDirectory" value="D:\UFMG\Testes\TP\TP_Teste"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="https://openjdk.java.net/"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -15,7 +15,7 @@
     <property name="user.country" value="BR"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="D:\UFMG\EngSoft2\TP\bancodequestoes"/>
+    <property name="user.dir" value="D:\UFMG\Testes\TP\TP_Teste"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="java.runtime.version" value="11.0.9+7-LTS"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
@@ -64,6 +64,12 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="questaoPossuiTema" classname="com.bdq.unittests.QuestaoTest" time="0.002"/>
+  <testcase name="setEnunciadoPublica" classname="com.bdq.unittests.QuestaoTest" time="0"/>
+  <testcase name="tentarIncluirTemaQueJaExisteRetornaExcecao" classname="com.bdq.unittests.QuestaoTest" time="0"/>
+  <testcase name="adicionaTemaQueNaoExiste" classname="com.bdq.unittests.QuestaoTest" time="0"/>
+  <testcase name="setQuestaoPublica" classname="com.bdq.unittests.QuestaoTest" time="0"/>
+  <testcase name="excecaoAoRemoverTemasCasoQuestaoTenha1OuMenosTemas" classname="com.bdq.unittests.QuestaoTest" time="0"/>
+  <testcase name="questaoPossuiTema" classname="com.bdq.unittests.QuestaoTest" time="0"/>
   <testcase name="questaoNaoPossuiTema" classname="com.bdq.unittests.QuestaoTest" time="0"/>
+  <testcase name="removeTema" classname="com.bdq.unittests.QuestaoTest" time="0"/>
 </testsuite>

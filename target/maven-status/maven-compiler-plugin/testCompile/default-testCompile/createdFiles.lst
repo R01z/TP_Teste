@@ -1,5 +1,8 @@
 com\bdq\unittests\UsuarioTest.class
 com\bdq\unittests\CpfUtilTest.class
+com\bdq\unittests\BancoDeQuestoesTest.class
+com\bdq\unittests\AlunoServicesTest.class
+com\bdq\unittests\NomeUtilTest.class
 com\bdq\unittests\BancoDeQuestoesTest$1.class
 com\bdq\unittests\QuestaoTest.class
-com\bdq\unittests\BancoDeQuestoesTest.class
+com\bdq\unittests\DaoUtilTest.class

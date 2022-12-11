@@ -34,6 +34,7 @@ com\bdq\application\ConsultaQuestaoApplication.class
 com\bdq\controllers\MenuProfessorController.class
 com\bdq\model\services\ProfessorServices.class
 com\bdq\controllers\LoginController.class
+com\bdq\model\services\util\NomeUtil.class
 com\bdq\config\db\DB.class
 com\bdq\model\exceptions\ValidationException.class
 com\bdq\model\entities\Tema.class
