@@ -38,7 +38,7 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
 
       - name: Test with Maven
-        run: mvn -B test --file pom.xml
+        run: mvn -B clean test --file pom.xml
       
       - name: Upload to Codecov
         uses: codecov/codecov-action@v2.0.2
