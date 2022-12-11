@@ -5,14 +5,16 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
-import com.bdq.model.entities.Util.AlunoUtil;
+import com.bdq.model.services.AlunoServices;
+import com.bdq.model.entities.Aluno;
 
-public class AlunoUtilTest {
+public class AlunoServicesTest {
 
     @Test
     public void matriculaNullRetornaExcecao() {
+        Aluno aluno = new Aluno();
         try {
-            boolean resultado = AlunoUtil.matriculaValida(null);
+            boolean resultado = AlunoServices.salvaMatricula(null, aluno);
         } catch (NullPointerException e) {
             assertEquals("Necessario preencher matricula", e.getMessage());
         }
@@ -20,19 +22,23 @@ public class AlunoUtilTest {
 
     @Test
     public void matriculaComQuantidadeDeDigitosDiferenteDe10RetornaFalso() {
-        boolean resultado = AlunoUtil.matriculaValida("666666");
+        Aluno aluno = new Aluno();
+        boolean resultado = AlunoServices.salvaMatricula("666666", aluno);
         assertFalse(resultado);
     }
 
     @Test
     public void matriculaComLetrasRetornaFalso() {
-        boolean resultado = AlunoUtil.matriculaValida("123456789A");
+        Aluno aluno = new Aluno();
+        boolean resultado = AlunoServices.salvaMatricula("123456789A", aluno);
         assertFalse(resultado);
     }
 
     @Test
     public void matriculaValida() {
-        boolean resultado = AlunoUtil.matriculaValida("1234567890");
+        Aluno aluno = new Aluno();
+        boolean resultado = AlunoServices.salvaMatricula("1234567890", aluno);
         assertTrue(resultado);
+        assertEquals("1234567890", aluno.getMatricula());
     }
 }
