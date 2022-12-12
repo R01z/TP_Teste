@@ -27,18 +27,18 @@ public class TemaTest {
 
     @Test
     public void testAlteracaoDeNome()  {
-        tema.setNome( "nome novo" );
-        assertEquals( "nome", "nome novo", tema.getNome() );
+        tema.setNome( "Tema Novo" );
+        assertEquals( "nome", "Tema Novo", tema.getNome() );
     }    
 
     @Test
     public void testIdPassadoNoConstrutor()  {
-        assertEquals( "idTema", 555, tema.getIdTema() );
+        assertEquals( "idTema", (Integer)555, tema.getIdTema() );
     }    
 
     @Test
     public void testAlteracaoDeID()  {
         tema.setIdTema( 444 );
-        assertEquals( "idTema", 444, tema.getIdTema() );
+        assertEquals( "idTema", (Integer)444, tema.getIdTema() );
     }   
 }
